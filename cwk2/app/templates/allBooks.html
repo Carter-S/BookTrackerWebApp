@@ -1,0 +1,33 @@
+{% extends "base.html" %} {% block content %}
+<div class="container text-center">
+  <div class="row">
+    <div class="col">
+      <h2 class="display-4 text-light">All Books</h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <form method="POST">
+        <p>
+          {{form.searchString(class="searchBar")}}{{form.submit(class="btn
+          btn-primary")}}
+        </p>
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <table class="table table-striped">
+        <th>Book name</th>
+        <th>Author</th>
+        {% for book in books %}
+        <tr>
+          <td>{{ book.name }}</td>
+          <td>{{ book.author }}</td>
+        </tr>
+        {% endfor %}
+      </table>
+    </div>
+  </div>
+</div>
+{% endblock %}

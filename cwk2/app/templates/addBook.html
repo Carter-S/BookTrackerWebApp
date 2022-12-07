@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{%block content %}
+<div id="center-down" class="container text-center">
+    <div class="row">
+        <div class="col">
+            <h2 class="display-4 text-light">Add Book</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <form method="POST">
+                <p>
+                    {{ form.name.label }} </br>
+                    {{ form.name() }}
+                </p>
+                <p>
+                    {{ form.author.label }} </br>
+                    {{ form.author() }}
+                </p>
+                <p>
+                    {{ form.submit(class="btn btn-primary") }}
+                </p>
+            </form>
+        </div>
+    </div>
+  </div>
+{% endblock %}
